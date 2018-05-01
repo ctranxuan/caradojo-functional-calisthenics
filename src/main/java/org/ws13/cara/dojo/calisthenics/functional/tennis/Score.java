@@ -26,54 +26,12 @@ public class Score {
         player2Points = requireNonNull(aPlayer2Points);
     }
 
-    public Score player1Marks() {
-        Score result;
-
-        switch (player1Points) {
-            case LOVE:
-                result = new Score(FIFTEEN, player2Points);
-                break;
-            case FIFTEEN:
-                result = new Score(THIRTY, player2Points);
-                break;
-            case THIRTY:
-                result = new Score(FORTY, player2Points);
-                break;
-            case FORTY:
-                switch (player2Points) {
-                    case FORTY:
-                        result = new Score(DEUCE, DEUCE);
-                        break;
-                    default:
-                        result = new Score(WIN, player2Points);
-                        break;
-                }
-                break;
-            case DEUCE:
-                result = new Score(ADVANTAGE, FORTY);
-                break;
-            case ADVANTAGE:
-                result = new Score(WIN, FORTY);
-                break;
-            case WIN:
-                result = new Score(WIN, FORTY);
-                break;
-            default:
-                result = new Score(WIN, FORTY);
-                break;
-        }
-
-
-        return result;
+    public Point player1Points() {
+        return player1Points;
     }
 
-    private Score swapPoints(Score aScore) {
-        return new Score(aScore.player2Points, aScore.player1Points);
-    }
-
-    public Score player2Marks() {
-        Score score = swapPoints(this).player1Marks();
-        return swapPoints(score);
+    public Point player2Points() {
+        return player2Points;
     }
 
     @Override
