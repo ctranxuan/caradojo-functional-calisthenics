@@ -11,8 +11,8 @@ import static org.ws13.cara.dojo.calisthenics.functional.tennis.IO.ReadAnswer.re
 /**
  * @author ctranxuan
  */
-public final class IO {
-    public static class AskQuestion {
+final class IO {
+    static class AskQuestion {
         static AskQuestion askQuestion() {
             return new AskQuestion();
         }
@@ -53,7 +53,7 @@ public final class IO {
     private IO() {
     }
 
-    public static String askPointWinnerAndGetAnswer() {
+    static String askPointWinnerAndReadAnswer() {
         return readAnswer().apply(askQuestion());
     }
 }

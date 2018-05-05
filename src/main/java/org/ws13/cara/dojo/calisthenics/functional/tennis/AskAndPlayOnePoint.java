@@ -4,7 +4,7 @@ import java.util.function.UnaryOperator;
 
 import static java.util.Objects.requireNonNull;
 import static org.ws13.cara.dojo.calisthenics.functional.tennis.ComputeScoreForPlayer.computeScoreForPlayer;
-import static org.ws13.cara.dojo.calisthenics.functional.tennis.IO.askPointWinnerAndGetAnswer;
+import static org.ws13.cara.dojo.calisthenics.functional.tennis.IO.askPointWinnerAndReadAnswer;
 import static org.ws13.cara.dojo.calisthenics.functional.tennis.MapAnswerToPlayer.mapAnswerToPlayer;
 
 /**
@@ -22,7 +22,7 @@ public final class AskAndPlayOnePoint implements UnaryOperator<Score> {
 
         return mapAnswerToPlayer()
                 .andThen(computeScoreForPlayer())
-                .andThen(f -> f.apply(aScore))
-                .apply(askPointWinnerAndGetAnswer());
+                .apply(askPointWinnerAndReadAnswer())
+                .apply(aScore);
     }
 }
