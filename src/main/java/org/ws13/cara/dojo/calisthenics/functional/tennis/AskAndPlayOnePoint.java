@@ -22,7 +22,14 @@ public final class AskAndPlayOnePoint implements UnaryOperator<Score> {
 
         return mapAnswerToPlayer()
                 .andThen(computeScoreForPlayer())
+                .andThen(f -> f.apply(aScore)) // <--- BREAK the rule "Name Everything"
                 .apply(askPointWinnerAndReadAnswer())
-                .apply(aScore);
+
+                ;
+
+//        return mapAnswerToPlayer()
+//                .andThen(computeScoreForPlayer())
+//                .apply(askPointWinnerAndReadAnswer()) <--- BREAK the rule "Side Effects at the Boundaries"
+//                .apply(aScore);
     }
 }
