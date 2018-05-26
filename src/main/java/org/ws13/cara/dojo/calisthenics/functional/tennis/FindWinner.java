@@ -5,7 +5,7 @@ import java.util.function.Function;
 import static java.util.Objects.requireNonNull;
 import static org.ws13.cara.dojo.calisthenics.functional.tennis.Player.PLAYER1;
 import static org.ws13.cara.dojo.calisthenics.functional.tennis.Player.PLAYER2;
-import static org.ws13.cara.dojo.calisthenics.functional.tennis.Score.Point.WIN;
+import static org.ws13.cara.dojo.calisthenics.functional.tennis.Point.WIN;
 
 /**
  * @author ctranxuan

@@ -11,12 +11,12 @@ import java.util.stream.Collectors;
 /**
  * @author ctranxuan
  */
-public class TestUtils {
+final class TestUtils {
     private TestUtils() {
     }
 
-    public static List<Score> allScoreCombinations() {
-        Set<List<Score.Point>> combinations = Sets.cartesianProduct(ImmutableList.of(ImmutableSet.copyOf(Score.Point.values()), ImmutableSet.copyOf(Score.Point.values())));
+    static List<Score> allScoreCombinations() {
+        Set<List<Point>> combinations = Sets.cartesianProduct(ImmutableList.of(ImmutableSet.copyOf(Point.values()), ImmutableSet.copyOf(Point.values())));
 
         return combinations.stream()
                 .map(l -> new Score(l.get(0), l.get(1)))

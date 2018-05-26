@@ -9,24 +9,24 @@ import static org.ws13.cara.dojo.calisthenics.functional.tennis.Player.PLAYER2;
 /**
  * @author ctranxuan
  */
-public final class MapAnswerToPlayer implements Function<String, Player> {
+final class ConvertAnswerToPlayer implements Function<String, Player> {
 
-    static MapAnswerToPlayer mapAnswerToPlayer() {
-        return new MapAnswerToPlayer();
+    static ConvertAnswerToPlayer convertAnswerToPlayer() {
+        return new ConvertAnswerToPlayer();
     }
 
     @Override
     public Player apply(String aAnswer) {
         requireNonNull(aAnswer);
+        switch (aAnswer) {
+            case "P1":
+                return PLAYER1;
 
-        if ("P1".equals(aAnswer)) {
-            return PLAYER1;
+            case "P2":
+                return PLAYER2;
 
-        } else if ("P2".equals(aAnswer)) {
-            return PLAYER2;
-
-        } else {
-            throw new RuntimeException("unknown player " + aAnswer);
+            default:
+                throw new IllegalArgumentException("unsupported answer: " +  aAnswer);
 
         }
     }

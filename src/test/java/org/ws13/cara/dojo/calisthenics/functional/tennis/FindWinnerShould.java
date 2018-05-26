@@ -4,7 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
-import org.ws13.cara.dojo.calisthenics.functional.tennis.Score.Point;
+import org.ws13.cara.dojo.calisthenics.functional.tennis.Point;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -12,7 +12,7 @@ import static org.junit.jupiter.params.provider.EnumSource.Mode.EXCLUDE;
 import static org.ws13.cara.dojo.calisthenics.functional.tennis.HasAWinner.hasAWinner;
 import static org.ws13.cara.dojo.calisthenics.functional.tennis.Player.PLAYER1;
 import static org.ws13.cara.dojo.calisthenics.functional.tennis.Player.PLAYER2;
-import static org.ws13.cara.dojo.calisthenics.functional.tennis.Score.Point.WIN;
+import static org.ws13.cara.dojo.calisthenics.functional.tennis.Point.WIN;
 import static org.ws13.cara.dojo.calisthenics.functional.tennis.TestUtils.allScoreCombinations;
 
 /**
