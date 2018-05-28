@@ -50,7 +50,7 @@ public final class TennisGame {
     final static TennisConsole console = new IoTennisConsole();
 
     public static void main(String[] args) {
-        Stream.iterate(new Score(LOVE, LOVE), TennisGame::playOnePoint)
+        Stream.iterate(new Score(0, 0), TennisGame::playOnePoint)
                 .filter(hasAWinner())
                 .map(findWinner())
                 .findFirst()

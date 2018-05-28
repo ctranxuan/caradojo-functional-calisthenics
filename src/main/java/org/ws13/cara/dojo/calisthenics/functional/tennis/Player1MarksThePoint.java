@@ -1,7 +1,6 @@
 package org.ws13.cara.dojo.calisthenics.functional.tennis;
 
 import java.util.EnumMap;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
@@ -37,7 +36,7 @@ public class Player1MarksThePoint implements Function<Score, Score> {
     public Score apply(Score aScore) {
         requireNonNull(aScore);
 
-        int i = pointsToInt.get(aScore.player1Points()) + 1;
+        int i = pointsToInt.get(aScore.player1TennisPoints()) + 1;
         return null;
     }
 }

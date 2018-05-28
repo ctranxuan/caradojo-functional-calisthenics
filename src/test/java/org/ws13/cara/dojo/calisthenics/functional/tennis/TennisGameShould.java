@@ -42,9 +42,9 @@ public class TennisGameShould {
 
     @ParameterizedTest(name = "initial score={0}, expected score = {1}")
     @CsvSource({
-            "0-0, 0-15",
-            "0-15, 0-30",
-            "0-30, 0-40",
+//            "0-0, 0-15",
+//            "0-15, 0-30",
+//            "0-30, 0-40",
             "0-40, 0-WIN",
             "15-0, 15-15",
             "15-15, 15-30",

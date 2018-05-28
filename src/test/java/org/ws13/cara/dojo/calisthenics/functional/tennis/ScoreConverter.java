@@ -31,7 +31,7 @@ final class ScoreConverter implements ArgumentConverter {
         Point player1Points = Point.from(player1PointsAsString).orElseThrow(() -> new IllegalArgumentException("unsupported point: " + player1PointsAsString));
         Point player2Points = Point.from(player2PointsAsString).orElseThrow(() -> new IllegalArgumentException("unsupported point: " + player2PointsAsString));
 
-        return Score.score(player1Points, player2Points)
-                    .orElseThrow(() -> new IllegalArgumentException("unsupported score: " + player1Points + "-" + player2Points));
+        return new Score(player1Points, player2Points);
+//                    .orElseThrow(() -> new IllegalArgumentException("unsupported score: " + player1Points + "-" + player2Points));
     }
 }

@@ -22,11 +22,11 @@ final class HasAWinner implements Predicate<Score> {
 
     private boolean hasPlayer2Won(Score aScore) {
         requireNonNull(aScore);
-        return aScore.player2Points() == WIN;
+        return aScore.player2TennisPoints() == WIN;
     }
 
     private boolean hasPlayer1Won(Score aScore) {
         requireNonNull(aScore);
-        return aScore.player1Points() == WIN;
+        return aScore.player1TennisPoints() == WIN;
     }
 }

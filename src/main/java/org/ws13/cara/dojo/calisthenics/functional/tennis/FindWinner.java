@@ -20,10 +20,10 @@ public final class FindWinner implements Function<Score, Player> {
     public Player apply(Score aScore) {
         requireNonNull(aScore);
 
-        if (aScore.player1Points() == WIN) {
+        if (aScore.player1TennisPoints() == WIN) {
             return PLAYER1;
 
-        } else if (aScore.player2Points() == WIN) {
+        } else if (aScore.player2TennisPoints() == WIN) {
             return PLAYER2;
 
         } else {

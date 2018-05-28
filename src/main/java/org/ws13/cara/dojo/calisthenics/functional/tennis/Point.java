@@ -28,4 +28,5 @@ public enum Point {
         requireNonNull(aPoint);
         return Optional.ofNullable(POINTS.get(aPoint));
     }
+
 }
