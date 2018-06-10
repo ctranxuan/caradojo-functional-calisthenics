@@ -18,13 +18,15 @@ final class ConvertAnswerToPlayer implements Function<String, Player> {
     @Override
     public Player apply(String aAnswer) {
         requireNonNull(aAnswer);
-        switch (aAnswer) {
+        switch (aAnswer.toUpperCase()) {
             case "P1":
                 return PLAYER1;
-
+            case "1":
+                return PLAYER1;
             case "P2":
                 return PLAYER2;
-
+            case "2":
+                return PLAYER2;
             default:
                 throw new IllegalArgumentException("unsupported answer: " +  aAnswer);
 

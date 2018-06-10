@@ -3,7 +3,6 @@ package org.ws13.cara.dojo.calisthenics.functional.tennis;
 import java.util.function.Predicate;
 
 import static java.util.Objects.requireNonNull;
-import static org.ws13.cara.dojo.calisthenics.functional.tennis.Point.WIN;
 
 /**
  * @author ctranxuan
@@ -17,16 +16,10 @@ final class HasAWinner implements Predicate<Score> {
     @Override
     public boolean test(Score aScore) {
         requireNonNull(aScore);
-        return hasPlayer1Won(aScore) || hasPlayer2Won(aScore);
+
+        return (aScore.player1Points() > 3
+                || aScore.player2Points() > 3)
+                && Math.abs(aScore.player1Points() - aScore.player2Points()) > 1;
     }
 
-    private boolean hasPlayer2Won(Score aScore) {
-        requireNonNull(aScore);
-        return aScore.player2TennisPoints() == WIN;
-    }
-
-    private boolean hasPlayer1Won(Score aScore) {
-        requireNonNull(aScore);
-        return aScore.player1TennisPoints() == WIN;
-    }
 }
